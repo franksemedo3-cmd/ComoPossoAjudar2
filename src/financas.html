@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças | ComoPossoAjudar</title>
+    <link rel="icon" href="data:,">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #166534;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #166534;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #14532d;
+        }
+
+        .resultado {
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .aviso {
+            font-size: 14px;
+            color: #475569;
+        }
+
+        a {
+            color: #166534;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>💰 Finanças</h1>
+        <p>Aprende a organizar o teu dinheiro e a poupar.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📊 Calculadora de orçamento</h2>
+            <p>Indica os teus rendimentos e despesas mensais.</p>
+
+            <label for="rendimento">Rendimento mensal (dobras):</label>
+            <input type="number" id="rendimento" min="0" step="any"
+                placeholder="Ex.: 5000">
+
+            <label for="despesas">Despesas mensais (dobras):</label>
+            <input type="number" id="despesas" min="0" step="any"
+                placeholder="Ex.: 3500">
+
+            <button type="button" onclick="calcularOrcamento()">
+                Calcular orçamento
+            </button>
+
+            <p id="resultadoOrcamento" class="resultado" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>🎯 Objetivo de poupança</h2>
+            <p>Calcula quanto precisas de guardar por mês.</p>
+
+            <label for="objetivo">Valor que queres juntar (dobras):</label>
+            <input type="number" id="objetivo" min="0" step="any"
+                placeholder="Ex.: 12000">
+
+            <label for="meses">Em quantos meses?</label>
+            <input type="number" id="meses" min="1" step="1"
+                placeholder="Ex.: 6">
+
+            <button type="button" onclick="calcularPoupanca()">
+                Calcular poupança
+            </button>
+
+            <p id="resultadoPoupanca" class="resultado" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>📝 Registar despesas</h2>
+            <p>Regista as despesas para acompanhares os teus gastos.</p>
+
+            <label for="descricao">Descrição da despesa:</label>
+            <input type="text" id="descricao"
+                placeholder="Ex.: Transporte">
+
+            <label for="valorDespesa">Valor (dobras):</label>
+            <input type="number" id="valorDespesa" min="0" step="any"
+                placeholder="Ex.: 100">
+
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="Alimentação">Alimentação</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Habitação">Habitação</option>
+                <option value="Educação">Educação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <button type="button" onclick="adicionarDespesa()">
+                Adicionar despesa
+            </button>
+
+            <p id="mensagemDespesa" aria-live="polite"></p>
+            <ul id="listaDespesas"></ul>
+            <p id="totalDespesas" class="resultado">
+                Total das despesas: 0 dobras
+            </p>
+
+            <button type="button" onclick="limparDespesas()">
+                Apagar todas as despesas
+            </button>
+
+            <p class="aviso">
+                Os registos ficam guardados neste navegador e neste dispositivo.
+                Não introduzas dados bancários, PINs ou palavras-passe.
+            </p>
+        </section>
+
+        <section>
+            <h2>💡 Dicas para poupar</h2>
+            <ul>
+                <li>Anota os teus rendimentos e despesas.</li>
+                <li>Distingue as necessidades dos desejos.</li>
+                <li>Define um objetivo de poupança realista.</li>
+                <li>Compara preços antes de comprar.</li>
+                <li>Reserva algum dinheiro para imprevistos, quando possível.</li>
+                <li>Evita empréstimos que não consegues pagar.</li>
+            </ul>
+        </section>
+
+        <p><a href="../index.html">← Voltar à página inicial</a></p>
+    </main>
+
+    <script>
+        function calcularOrcamento() {
+            const rendimento = document.getElementById("rendimento").value;
+            const despesas = document.getElementById("despesas").value;
+            const resultado = document.getElementById("resultadoOrcamento");
+
+            if (rendimento === "" || despesas === "" ||
+                Number(rendimento) < 0 || Number(despesas) < 0) {
+                resultado.textContent =
+                    "Introduz valores válidos para os rendimentos e as despesas.";
+                return;
+            }
+
+            const saldo = Number(rendimento) - Number(despesas);
+
+            resultado.textContent = saldo >= 0
+                ? "Dinheiro restante: " + saldo.toLocaleString("pt-PT") + " dobras."
+                : "Atenção: faltam " + Math.abs(saldo).toLocaleString("pt-PT") +
+                  " dobras para cobrir as despesas.";
+        }
+
+        function calcularPoupanca() {
+            const objetivo = document.getElementById("objetivo").value;
+            const meses = document.getElementById("meses").value;
+            const resultado = document.getElementById("resultadoPoupanca");
+
+            if (objetivo === "" || meses === "" ||
+                Number(objetivo) <= 0 || Number(meses) <= 0 ||
+                !Number.isInteger(Number(meses))) {
+                resultado.textContent =
+                    "Introduz um objetivo positivo e um número inteiro de meses.";
+                return;
+            }
+
+            const mensal = Number(objetivo) / Number(meses);
+
+            resultado.textContent =
+                "Deves guardar aproximadamente " +
+                mensal.toLocaleString("pt-PT", { maximumFractionDigits: 2 }) +
+                " dobras por mês.";
+        }
+
+        let despesasRegistadas = [];
+
+        function mostrarDespesas() {
+            const lista = document.getElementById("listaDespesas");
+            const totalElemento = document.getElementById("totalDespesas");
+
+            lista.replaceChildren();
+
+            let total = 0;
+
+            despesasRegistadas.forEach(function (despesa, indice) {
+                total += despesa.valor;
+
+                const item = document.createElement("li");
+                item.textContent = despesa.descricao + " — " +
+                    despesa.categoria + ": " +
+                    despesa.valor.toLocaleString("pt-PT") + " dobras ";
+
+                const botao = document.createElement("button");
+                botao.type = "button";
+                botao.textContent = "Apagar";
+                botao.style.width = "auto";
+                botao.style.marginLeft = "8px";
+
+                botao.addEventListener("click", function () {
+                    despesasRegistadas.splice(indice, 1);
+                    guardarDespesas();
+                    mostrarDespesas();
+                });
+
+                item.appendChild(botao);
+                lista.appendChild(item);
+            });
+
+            totalElemento.textContent =
+                "Total das despesas: " + total.toLocaleString("pt-PT") +
+                " dobras";
+        }
+
+        function guardarDespesas() {
+            try {
+                localStorage.setItem(
+                    "despesasComoPossoAjudar",
+                    JSON.stringify(despesasRegistadas)
+                );
+            } catch (erro) {
+                document.getElementById("mensagemDespesa").textContent =
+                    "Não foi possível guardar os registos neste navegador.";
+            }
+        }
+
+        function adicionarDespesa() {
+            const descricao = document.getElementById("descricao").value.trim();
+            const valorTexto = document.getElementById("valorDespesa").value;
+            const categoria = document.getElementById("categoria").value;
+            const mensagem = document.getElementById("mensagemDespesa");
+
+            if (descricao === "" || valorTexto === "" ||
+                !Number.isFinite(Number(valorTexto)) || Number(valorTexto) <= 0) {
+                mensagem.textContent =
+                    "Preenche a descrição e indica um valor superior a zero.";
+                return;
+            }
+
+            despesasRegistadas.push({
+                descricao: descricao,
+                valor: Number(valorTexto),
+                categoria: categoria
+            });
+
+            guardarDespesas();
+            mostrarDespesas();
+
+            document.getElementById("descricao").value = "";
+            document.getElementById("valorDespesa").value = "";
+            mensagem.textContent = "Despesa adicionada.";
+        }
+
+        function limparDespesas() {
+            if (!confirm("Queres apagar todas as despesas registadas?")) {
+                return;
+            }
+
+            despesasRegistadas = [];
+            guardarDespesas();
+            mostrarDespesas();
+
+            document.getElementById("mensagemDespesa").textContent =
+                "Todas as despesas foram apagadas.";
+        }
+
+        try {
+            const dadosGuardados = JSON.parse(
+                localStorage.getItem("despesasComoPossoAjudar") || "[]"
+            );
+
+            if (Array.isArray(dadosGuardados)) {
+                despesasRegistadas = dadosGuardados.filter(function (item) {
+                    return item &&
+                        typeof item.descricao === "string" &&
+                        typeof item.categoria === "string" &&
+                        Number.isFinite(item.valor) &&
+                        item.valor > 0;
+                });
+            }
+        } catch (erro) {
+            despesasRegistadas = [];
+        }
+
+        mostrarDespesas();
+    </script>
+</body>
+</html>

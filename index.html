@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#12304a">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como posso te ajudar?</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="data:,">
+    <script src="src/app.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Como posso te ajudar?</h1>
+        <p>Um só lugar. Muitas soluções. Para todos.</p>
+    </header>
+
+    <main>
+        <label for="pesquisa">O que procuras hoje?</label>
+        <input id="pesquisa" type="search"
+               placeholder="Pesquisar um serviço...">
+
+        <section class="servicos" id="servicos">
+            <a class="servico" href="src/educacao.html" data-nome="educação">
+                📚 <span>Educação</span>
+            </a>
+
+            <a class="servico" href="src/emprego.html" data-nome="emprego">
+                💼 <span>Emprego</span>
+            </a>
+
+            <a class="servico" href="src/saude.html" data-nome="saúde">
+                ❤️ <span>Saúde</span>
+            </a>
+
+            <a class="servico" href="src/financas.html" data-nome="finanças">
+                💰 <span>Finanças</span>
+            </a>
+
+            <a class="servico" href="src/servicos.html" data-nome="serviços úteis água eletricidade transportes">
+                🏠 <span>Serviços úteis</span>
+            </a>
+
+            <a class="servico" href="src/ajuda.html" data-nome="comunidade ajuda contactos apoio">
+                🤝 <span>Contactos e Ajuda</span>
+            </a>
+
+            <a class="servico" href="src/servicos.html" data-nome="agricultura">
+                🌱 <span>Agricultura</span>
+            </a>
+
+            <a class="servico" href="src/servicos.html" data-nome="transportes">
+                🚗 <span>Transportes</span>
+            </a>
+        </section>
+
+        <p id="mensagem" role="status">
+            Escolhe um serviço para começar.
+        </p>
+    </main>
+
+    <footer>
+        <p>Como posso te ajudar? — A tua vida, mais simples.</p>
+    </footer>
+</body>
+</html>

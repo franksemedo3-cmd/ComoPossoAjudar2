@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprego | Como posso te ajudar?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #12304a;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+       background: #12304a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+        }
+        main {
+            max-width: 700px;
+            margin: 25px auto;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+        }
+        input, textarea, button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button {
+            background: #075985;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        a { color: #075985; }
+        article {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💼 Área de Emprego</h1>
+        <p>Prepara-te para novas oportunidades!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📝 Criar o teu currículo</h2>
+            <input id="nome" placeholder="Nome completo">
+            <input id="contacto" placeholder="Telefone ou email">
+            <input id="formacao" placeholder="Formação académica">
+            <textarea id="experiencia" placeholder="Experiência e competências"></textarea>
+            <button onclick="criarCV()">Gerar currículo</button>
+        </section>
+
+        
+<section>
+    <h2>🔎 Ofertas de emprego</h2>
+    <p>Pesquisa oportunidades em São Tomé e Príncipe.</p>
+
+    <input id="pesquisaEmprego" type="search"
+           placeholder="Profissão, sector, empresa ou local...">
+<button type="button" onclick="pesquisarEmpregos()">
+    Pesquisar vagas
+</button>
+<button type="button" onclick="limparPesquisaEmprego()">
+    Limpar pesquisa
+</button>
+    <div id="ofertas">
+        <article>
+            <h3>💻 Informática e tecnologia</h3>
+            <p>Funções: técnico de sistemas, informática, redes e suporte técnico.</p>
+            <p>Localização: São Tomé e outras localidades indicadas nos anúncios.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://empregostp.com/vagas" target="_blank" rel="noopener">Ver vagas no Empregos STP</a>
+        </article>
+
+        <article>
+            <h3>⚡ Electricidade e construção</h3>
+            <p>Funções: eletricista, ajudante, carpinteiro e engenheiro civil.</p>
+            <p>Localização: Guadalupe, Água Grande, Príncipe e outras localidades, conforme a vaga.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://valeemprego.com/vagas/" target="_blank" rel="noopener">Ver vagas no Vale Empregos</a>
+        </article>
+
+        <article>
+            <h3>🏨 Turismo, hotéis e restauração</h3>
+            <p>Funções: guia turístico, rececionista, cozinheiro e empregado de mesa.</p>
+            <p>Localização: São Tomé, Praia Lagarto e outras localidades indicadas nos anúncios.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://kezir.st/announcements?category=Emprego" target="_blank" rel="noopener">Ver anúncios no Kezir</a>
+        </article>
+
+        <article>
+            <h3>🏪 Comércio e vendas</h3>
+            <p>Funções: vendedor, operador de caixa, atendimento e colaborador de loja.</p>
+            <p>Localização: Mé-Zóchi, Neves, Água Grande e outras localidades, conforme a vaga.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://valeemprego.com/vagas/" target="_blank" rel="noopener">Pesquisar vagas de comércio</a>
+        </article>
+
+        <article>
+            <h3>📊 Administração e contabilidade</h3>
+            <p>Funções: assistente administrativo, secretário, contabilista e gestor.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://saplic.com/st" target="_blank" rel="noopener">Ver oportunidades no Saplic</a>
+        </article>
+
+        <article>
+            <h3>🎓 Educação e formação</h3>
+            <p>Funções: professor, educador de infância, explicador e formador.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://kezir.st/announcements?category=Emprego" target="_blank" rel="noopener">Consultar anúncios</a>
+        </article>
+
+        <article>
+            <h3>🌱 Agricultura e ambiente</h3>
+            <p>Funções: técnico agrícola, trabalhador agrícola e técnico ambiental.</p>
+            <p>Localização: São Tomé e Príncipe; confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://valeemprego.com/vagas/" target="_blank" rel="noopener">Pesquisar oportunidades</a>
+        </article>
+
+        <article>
+            <h3>🚚 Transportes e logística</h3>
+            <p>Funções: motorista, distribuidor, armazenista e responsável de armazém.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://kezir.st/announcements?category=Emprego" target="_blank" rel="noopener">Ver anúncios de emprego</a>
+        </article>
+
+        <article>
+            <h3>🏥 Saúde e assistência</h3>
+            <p>Funções: enfermagem, apoio assistencial e serviços de saúde.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://saplic.com/st" target="_blank" rel="noopener">Consultar oportunidades</a>
+        </article>
+
+        <article>
+            <h3>🎨 Marketing, comunicação e design</h3>
+            <p>Funções: designer gráfico, gestor de redes sociais, jornalista e marketing.</p>
+            <p>Localização: confirmar no anúncio; verificar também vagas remotas.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://empregostp.com/vagas" target="_blank" rel="noopener">Ver vagas no Empregos STP</a>
+        </article>
+
+        <article>
+            <h3>🧹 Limpeza e serviços gerais</h3>
+            <p>Funções: limpeza, lavandaria, manutenção e apoio doméstico.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://kezir.st/announcements?category=Emprego" target="_blank" rel="noopener">Consultar anúncios</a>
+        </article>
+
+        <article>
+            <h3>🏦 Banca, finanças e recursos humanos</h3>
+            <p>Funções: contabilidade, finanças, recursos humanos e auditoria.</p>
+            <p>Localização: confirmar no anúncio.</p>
+            <p>Empresa/anúncios: consultar as vagas disponíveis.</p>
+            <a href="https://valeemprego.com/vagas/" target="_blank" rel="noopener">Pesquisar vagas</a>
+        </article>
+    </div>
+
+<h2>Vagas de emprego guardadas</h2>
+
+<form id="formVaga">
+  <label for="tituloVaga">Nome da vaga:</label>
+  <input type="text" id="tituloVaga" required>
+
+  <label for="empresaVaga">Empresa:</label>
+  <input type="text" id="empresaVaga" required>
+
+  <label for="localVaga">Local:</label>
+  <input type="text" id="localVaga" required>
+
+  <label for="descricaoVaga">Descrição:</label>
+  <textarea id="descricaoVaga" required></textarea>
+
+  <button type="submit">Guardar vaga</button>
+</form>
+
+
+<input
+  type="text"
+  id="pesquisaVagasGuardadas"
+  placeholder="Pesquisar vagas guardadas..."
+>
+
+<div id="vagasGuardadas"></div>
+
+
+    <p id="resultadoPesquisa" role="status"></p>
+    <p><small>As vagas, empresas e localizações devem ser confirmadas no portal original. Esta lista organiza sectores e fontes de pesquisa; não representa 12 vagas confirmadas.</small></p>
+</section>
+
+
+        <section>
+            <h2>🎯 Dicas para procurar emprego</h2>
+            <ul>
+                <li>Prepara um currículo claro e atualizado.</li>
+                <li>Aprende competências úteis para a profissão desejada.</li>
+                <li>Prepara-te para entrevistas.</li>
+                <li>Confirma se as ofertas são legítimas.</li>
+                <li>Desconfia de pedidos de dinheiro em troca de uma promessa de emprego.</li>
+            </ul>
+        </section>
+
+        <p><a href="../index.html">← Voltar à página inicial</a></p>
+    </main>
+
+    <script>
+        function criarCV() {
+            const nome = document.getElementById("nome").value.trim();
+            const contacto = document.getElementById("contacto").value.trim();
+            const formacao = document.getElementById("formacao").value.trim();
+            const experiencia = document.getElementById("experiencia").value.trim();
+
+            if (!nome || !contacto || !formacao) {
+                alert("Preenche o nome, contacto e formação.");
+                return;
+            }
+
+            const texto =
+                "CURRÍCULO\n\n" +
+                "Nome: " + nome + "\n" +
+                "Contacto: " + contacto + "\n" +
+                "Formação: " + formacao + "\n" +
+                "Experiência e competências: " + experiencia;
+
+            const ficheiro = new Blob([texto], {
+                type: "text/plain;charset=utf-8"
+            });
+            const url = URL.createObjectURL(ficheiro);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "meu-curriculo.txt";
+            link.click();
+            setTimeout(function () {
+                URL.revokeObjectURL(url);
+            }, 1000);
+        }
+
+        
+function pesquisarEmpregos() {
+    const campo = document.getElementById("pesquisaEmprego");
+    const pesquisa = campo.value.trim().toLocaleLowerCase("pt");
+    const ofertas = document.querySelectorAll("#ofertas article");
+    const resultado = document.getElementById("resultadoPesquisa");
+    let encontrados = 0;
+
+    ofertas.forEach(function (oferta) {
+        const corresponde = oferta.textContent
+            .toLocaleLowerCase("pt")
+            .includes(pesquisa);
+
+        oferta.style.display = corresponde ? "block" : "none";
+
+        if (corresponde) encontrados++;
+    });
+
+    resultado.textContent = encontrados + " sector(es) encontrado(s).";
+}
+
+function limparPesquisaEmprego() {
+    document.getElementById("pesquisaEmprego").value = "";
+
+    document.querySelectorAll("#ofertas article").forEach(function (oferta) {
+        oferta.style.display = "block";
+    });
+
+    document.getElementById("resultadoPesquisa").textContent = "";
+}
+document.getElementById("pesquisaEmprego")
+    .addEventListener("input", pesquisarEmpregos);
+
+    </script>
+    
+<script>
+const formVaga = document.getElementById("formVaga");
+const listaVagas = document.getElementById("vagasGuardadas");
+
+let vagas = JSON.parse(
+  localStorage.getItem("vagasEmpregoComoPossoAjudar") || "[]"
+);
+
+function mostrarVagas() {
+  listaVagas.replaceChildren();
+
+  const pesquisa = document.getElementById("pesquisaVagasGuardadas").value.toLowerCase();
+
+vagas.filter(vaga =>
+  (vaga.titulo + " " + vaga.empresa + " " + vaga.local + " " + vaga.descricao)
+    .toLowerCase().includes(pesquisa)
+).forEach((vaga) => {
+    const cartao = document.createElement("article");
+    const titulo = document.createElement("h3");
+    const empresa = document.createElement("p");
+    const local = document.createElement("p");
+    const descricao = document.createElement("p");
+    const apagar = document.createElement("button");
+
+    titulo.textContent = vaga.titulo;
+    empresa.textContent = "Empresa: " + vaga.empresa;
+    local.textContent = "Local: " + vaga.local;
+    descricao.textContent = vaga.descricao;
+    apagar.textContent = "Apagar vaga";
+
+    apagar.addEventListener("click", () => {
+        const indice = vagas.indexOf(vaga);
+      vagas.splice(indice, 1);
+      localStorage.setItem(
+        "vagasEmpregoComoPossoAjudar",
+        JSON.stringify(vagas)
+      );
+      mostrarVagas();
+    });
+
+    cartao.append(titulo, empresa, local, descricao, apagar);
+    listaVagas.appendChild(cartao);
+  });
+}
+document
+  .getElementById("pesquisaVagasGuardadas")
+  .addEventListener("input", mostrarVagas);
+formVaga.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+
+  vagas.push({
+    titulo: document.getElementById("tituloVaga").value.trim(),
+    empresa: document.getElementById("empresaVaga").value.trim(),
+    local: document.getElementById("localVaga").value.trim(),
+    descricao: document.getElementById("descricaoVaga").value.trim()
+  });
+
+  localStorage.setItem(
+    "vagasEmpregoComoPossoAjudar",
+    JSON.stringify(vagas)
+  );
+
+  formVaga.reset();
+  mostrarVagas();
+});
+
+mostrarVagas();
+</script>
+
+</body>
+</html>

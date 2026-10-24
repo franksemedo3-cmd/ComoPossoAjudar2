@@ -1,0 +1,114 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+background-image:
+    radial-gradient(circle at 15% 20%, rgba(22, 138, 173, 0.10) 0, transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(18, 48, 74, 0.08) 0, transparent 35%),
+    linear-gradient(135deg, #f1f5f9 0%, #e8f1f7 50%, #f8fafc 100%);
+background-attachment: fixed;
+    color: #12304a;
+}
+
+.cabecalho {
+    background: #12304a;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.cabecalho h1 {
+    margin-top: 0;
+    font-size: clamp(25px, 5vw, 38px);
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.servicos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit, minmax(140px, 1fr)
+    );
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.servico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: white;
+    color: #12304a;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.servico span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.servico:hover {
+    border-color: #168aad;
+    transform: translateY(-2px);
+}
+
+#mensagem {
+    padding: 15px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #526477;
+}
+
+/* Garantir que os cartões em formato de link mantêm o estilo */
+a.servico {
+    text-decoration: none;
+    font-family: inherit;
+}
+
+/* Manter o efeito ao passar o rato */
+a.servico:hover {
+    border-color: #168aad;
+    transform: translateY(-2px);
+}
+
+/* Indicar visualmente quando o cartão recebe foco pelo teclado */
+.servico:focus-visible {
+    outline: 3px solid #168aad;
+    outline-offset: 3px;
+}
+
+/* Esconder cartões que não correspondem à pesquisa */
+.servico[hidden] {
+    display: none;
+}

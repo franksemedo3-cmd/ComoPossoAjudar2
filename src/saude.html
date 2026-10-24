@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde | ComoPossoAjudar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #12304a;
+        }
+
+        header {
+            background: #12304a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            border-radius: 12px;
+        }
+
+        header h1 {
+            margin-top: 0;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            background: #087e8b;
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        .aviso {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cartoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .cartao {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .cartao h2 {
+            font-size: 20px;
+            color: #087e8b;
+        }
+
+        .cartao p {
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #526579;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>❤️ Área de Saúde</h1>
+        <p>Informação e orientação para cuidar melhor de ti e da tua família.</p>
+
+        <a class="voltar" href="../index.html">
+            ← Voltar à página inicial
+        </a>
+    </header>
+
+    <main>
+        <div class="aviso">
+            <strong>Importante:</strong>
+            Esta página apresenta informações gerais e não substitui
+            uma consulta médica. Em caso de emergência, procura
+            imediatamente um serviço de saúde local.
+        </div>
+
+        <section class="cartoes">
+
+            <article class="cartao">
+                <h2>🚑 Urgências</h2>
+                <p>
+                    Em situações graves, procura assistência médica
+                    imediatamente. Não esperes que os sintomas
+                    desapareçam se a situação estiver a piorar.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <h2>🧼 Higiene e prevenção</h2>
+                <p>
+                    Lava as mãos com água e sabão, mantém os alimentos
+                    limpos, bebe água segura e conserva os espaços
+                    domésticos limpos.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <h2>💉 Vacinação</h2>
+                <p>
+                    Mantém as vacinas atualizadas e consulta um
+                    profissional de saúde para saber quais são
+                    recomendadas para cada idade.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <h2>🥗 Alimentação saudável</h2>
+                <p>
+                    Procura ter uma alimentação variada, incluindo
+                    frutas, legumes, alimentos ricos em proteínas
+                    e água potável.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <h2>🧠 Bem-estar emocional</h2>
+                <p>
+                    Descanso, atividade física e conversar com alguém
+                    de confiança podem ajudar. Procura apoio profissional
+                    se o sofrimento emocional persistir.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <h2>👨‍👩‍👧 Saúde familiar</h2>
+                <p>
+                    Consultas de rotina ajudam a acompanhar a saúde
+                    das crianças, dos adultos, das grávidas e
+                    das pessoas idosas.
+                </p>
+            </article>
+
+        </section>
+        
+
+<section style="margin-top: 25px;">
+    <h2>🏥 Unidades de saúde</h2>
+
+<input
+    type="text"
+    id="pesquisaSaude"
+    placeholder="Pesquisar hospital, clínica ou contacto..."
+    style="width: 100%; padding: 12px; margin: 12px 0 20px;
+           border: 1px solid #cbd5e1; border-radius: 8px;"
+>
+<p id="mensagemPesquisa"></p>
+
+<button
+    type="button"
+    id="limparPesquisa"
+    style="padding: 10px 15px; margin-bottom: 15px;
+           border: none; border-radius: 8px;
+           background: #087e8b; color: white; cursor: pointer;"
+>
+    Limpar pesquisa
+</button>
+
+    <p>
+        Consulta estas referências e confirma os serviços e horários
+        antes de te deslocares.
+    </p>
+
+    <div class="cartoes">
+
+        <article class="cartao">
+            <h3>Hospital Dr. Ayres de Menezes</h3>
+            <p>
+                Hospital público central, no Bairro do Hospital,
+                em São Tomé.
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hospital+Dr+Ayres+de+Menezes+Sao+Tome"
+               target="_blank" rel="noopener noreferrer">
+                Ver localização
+            </a>
+        </article>
+
+        <article class="cartao">
+            <h3>Centro Policlínico de Água Grande</h3>
+            <p>Unidade de saúde situada na cidade de São Tomé.</p>
+            <p>Telefone divulgado: 222 46 04. Confirma se continua ativo.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Centro+Policlinico+Agua+Grande+Sao+Tome"
+               target="_blank" rel="noopener noreferrer">
+                Ver localização
+            </a>
+        </article>
+
+        <article class="cartao">
+            <h3>Gnóstica Medical Center</h3>
+            <p>Clínica privada em São Tomé.</p>
+            <p>Telefone divulgado: +239 998 8115.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Gnostica+Medical+Center+Sao+Tome"
+               target="_blank" rel="noopener noreferrer">
+                Ver localização
+            </a>
+        </article>
+
+        <article class="cartao">
+            <h3>Ministério da Saúde</h3>
+            <p>Telefone divulgado: +239 222 6145.</p>
+            <p>Confirma os contactos e o endereço nos canais oficiais.</p>
+            <a href="https://minsaude.st/contacto/"
+               target="_blank" rel="noopener noreferrer">
+                Consultar contacto oficial
+            </a>
+        </article>
+<a href="https://www.google.com/maps/search/?api=1&query=Centro+Policlinico+de+Agua+Grande+Sao+Tome"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="display:inline-block; margin-top:10px; padding:8px 12px;
+          background:#087e8b; color:white; border-radius:6px;
+          text-decoration:none;">
+    📍 Ver localização
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Hospital+Dr+Ayres+de+Menezes+Sao+Tome"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="display:inline-block; margin-top:10px; padding:8px 12px;
+          background:#087e8b; color:white; border-radius:6px;
+          text-decoration:none;">
+    📍 Ver localização
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Gnostica+Medical+Center+Sao+Tome"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="display:inline-block; margin-top:10px; padding:8px 12px;
+          background:#087e8b; color:white; border-radius:6px;
+          text-decoration:none;">
+    📍 Ver localização
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Ministerio+da+Saude+Sao+Tome"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="display:inline-block; margin-top:10px; padding:8px 12px;
+          background:#087e8b; color:white; border-radius:6px;
+          text-decoration:none;">
+    📍 Ver localização
+</a>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>ComoPossoAjudar — Informação para a comunidade.</p>
+    </footer>
+
+<script>
+    const pesquisaSaude = document.getElementById("pesquisaSaude");
+    const mensagemPesquisa = document.getElementById("mensagemPesquisa");
+
+    const unidadesSaude = document.querySelectorAll(
+        "section[style*='margin-top'] .cartoes .cartao"
+    );
+
+    pesquisaSaude.addEventListener("input", function () {
+        const texto = pesquisaSaude.value
+            .trim()
+            .toLocaleLowerCase("pt");
+
+        let encontrados = 0;
+
+        unidadesSaude.forEach(function (unidade) {
+            const corresponde = unidade.textContent
+                .toLocaleLowerCase("pt")
+                .includes(texto);
+
+            unidade.hidden = !corresponde;
+
+            if (corresponde) {
+                encontrados++;
+            }
+        });
+
+        mensagemPesquisa.textContent = texto === ""
+            ? ""
+            : encontrados + " unidade(s) encontrada(s).";
+    });
+    document.getElementById("limparPesquisa").addEventListener("click", function () {
+    pesquisaSaude.value = "";
+    mensagemPesquisa.textContent = "";
+
+    unidadesSaude.forEach(function (unidade) {
+        unidade.hidden = false;
+    });
+});
+</script>
+
+</body>
+</html>
